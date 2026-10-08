@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for better aesthetic */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #ffe600; 
+}
+::-webkit-scrollbar-thumb {
+    background: #333333; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #007fff; 
+}
+
+/* Arc text wrapper styles */
+.arc-word {
+    display: inline-block;
+    position: absolute;
+    transform-origin: bottom center;
+}
+
+/* Base resets as per DESIGN.md */
+* {
+    box-shadow: none !important; /* Flat aesthetic enforce */
+}
+/* Re-enable explicit sharp shadows added in html class */
+.shadow-\[12px_12px_0_\#333333\],
+.shadow-\[8px_8px_0_\#ef3b2c\],
+.shadow-\[8px_8px_0_\#007fff\],
+.shadow-\[8px_8px_0_\#333333\],
+.shadow-\[16px_16px_0_\#333333\] {
+    box-shadow: inherit !important;
+}
+
+/* Active Nav State */
+.nav-link.active .active-indicator {
+    width: 20px;
+}
