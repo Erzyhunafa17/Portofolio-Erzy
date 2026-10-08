@@ -11,8 +11,16 @@ const CustomCursor = () => {
   const x = useSpring(cursorX, springConfig);
   const y = useSpring(cursorY, springConfig);
 
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   useEffect(() => {
-    // Sembunyikan kursor bawaan secara global
+    // Deteksi jika perangkat adalah layar sentuh (mobile/tablet)
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsTouchDevice(true);
+      return;
+    }
+
+    // Sembunyikan kursor bawaan secara global hanya untuk desktop
     document.body.style.cursor = 'none';
 
     const moveCursor = (e) => {
@@ -52,9 +60,9 @@ const CustomCursor = () => {
     };
   }, [cursorX, cursorY]);
 
-  return (
+  return isTouchDevice ? null : (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[10000] flex items-center justify-center"
+      className="fixed top-0 left-0 pointer-events-none z-[10000] flex items-center justify-center hidden md:flex"
       style={{ x, y }}
       animate={{
         scale: isHovered ? 1.2 : 1,

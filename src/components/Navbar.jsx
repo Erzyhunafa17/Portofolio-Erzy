@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <nav 
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[90%] md:w-auto`}
+        className={`fixed top-4 left-5 right-5 z-50 transition-all duration-300 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-auto`}
         id="navbar"
       >
         <div className={`border-4 border-charcoal-ink flex items-center justify-between px-6 py-3 transition-all duration-300 ${
@@ -83,7 +83,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] z-40 md:hidden bg-cloud-white border-4 border-charcoal-ink shadow-[8px_8px_0_#333333] flex flex-col p-4 gap-2"
+            className="fixed top-24 left-5 right-5 z-40 md:hidden bg-cloud-white border-4 border-charcoal-ink shadow-[8px_8px_0_#333333] flex flex-col p-4 gap-2"
           >
             {navLinks.map((link) => (
               <a 
