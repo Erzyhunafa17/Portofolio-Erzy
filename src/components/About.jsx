@@ -126,7 +126,7 @@ const About = () => {
             <TiltDiv className="relative z-10 w-full aspect-square border-4 border-charcoal-ink bg-cloud-white p-2">
               <div className="w-full h-full overflow-hidden border-2 border-charcoal-ink">
                 <img 
-                  src="/foto/foto saya.jpeg" 
+                  src="/foto_saya.jpeg" 
                   alt="Foto Erzy Hunafa" 
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
                 />
